@@ -1,0 +1,9 @@
+# Course & Syllabus Mapping (BCSE0401: Data Structures and Algorithms - II)
+
+| Module | DSA-II Syllabus Topics | Q-Route Module | Primary Data Structures & Algorithms | Source Location | Tests & Benchmarks |
+|---|---|---|---|---|---|
+| **Module I** | Binary Trees, BST, AVL Trees, Threaded Binary Trees, Traversal Optimization | Unit 1 (Ingestion) | `ThreadedAST`, `ASTNode` (24B hot/cold split), `AvlSymbolTable` (LL, RR, LR, RL rotations) | `include/qroute/unit1_ast/`, `src/unit1_ast/` | `tests/test_unit1_ast.cpp`, `benchmarks/bench_traversal.cpp` |
+| **Module II** | Graphs, Adjacency Lists, Traversals (BFS/DFS), Shortest Paths (Dijkstra, Bellman-Ford, Floyd-Warshall), MST (Prim, Kruskal) | Unit 2 (Graph & Routing) | `PhysicalCouplingGraph`, Binary Heap Dijkstra, `SwapSynthesizer` (3xCX decomposition), `PlacementMap` | `include/qroute/unit2_graph/`, `src/unit2_graph/` | `tests/test_unit2_graph.cpp`, `benchmarks/bench_dijkstra.cpp` |
+| **Module III** | Dynamic Programming, Matrix Chain Multiplication (MCM), Optimal Parenthesization | Unit 3 (Contraction Planning) | `MatrixChainOptimizer`, $O(k^3)$ MCM DP recurrence, `SafeArithmetic` saturation | `include/qroute/unit3_dp/`, `src/unit3_dp/` | `tests/test_unit3_dp.cpp`, `benchmarks/bench_mcm.cpp` |
+| **Module IV** | Backtracking, Branch & Bound, State Space Search, Admissible Bounding Functions | Unit 4 (Qubit Placement) | `QubitPlacementBAndB`, DFS B&B with explicit vector stack, `LookaheadGraph`, admissible lower bound | `include/qroute/unit4_bnb/`, `src/unit4_bnb/` | `tests/test_unit4_bnb.cpp`, `benchmarks/bench_bnb.cpp` |
+| **Module V** | Advanced Data Structures, Comparative Priority Queues, Binomial & Fibonacci Heaps | Unit 5 (Telemetry Broker) | Custom `FibonacciHeap` ($O(1)$ amortized insert/decrease-key, cascading cuts), `BinaryHeapBaseline`, `TelemetryBroker` | `include/qroute/unit5_heap/`, `src/unit5_heap/` | `tests/test_unit5_heap.cpp`, `benchmarks/bench_priority_queues.cpp` |

@@ -1,0 +1,6 @@
+# Q-Route reference topology: linear chain, 5 physical qubits
+5 4
+0 1 0.9990 120.0
+1 2 0.9980 135.0
+2 3 0.9990 118.0
+3 4 0.9980 140.0
