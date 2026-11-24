@@ -48,3 +48,79 @@ add_test(NAME unit2_graph
     COMMAND test_unit2_graph
     WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
 )
+
+add_executable(test_unit3_dp
+    test_unit3_dp.cpp
+)
+
+target_link_libraries(test_unit3_dp PRIVATE
+    qroute_unit3
+    qroute_unit1
+    qroute_common
+)
+
+target_enable_warnings(test_unit3_dp)
+target_enable_sanitizers(test_unit3_dp)
+
+add_test(NAME unit3_dp
+    COMMAND test_unit3_dp
+    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+)
+
+add_executable(test_unit4_bnb
+    test_unit4_bnb.cpp
+)
+
+target_link_libraries(test_unit4_bnb PRIVATE
+    qroute_unit4
+    qroute_unit2
+    qroute_unit1
+    qroute_common
+)
+
+target_enable_warnings(test_unit4_bnb)
+target_enable_sanitizers(test_unit4_bnb)
+
+add_test(NAME unit4_bnb
+    COMMAND test_unit4_bnb
+    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+)
+
+add_executable(test_unit5_heap
+    test_unit5_heap.cpp
+)
+
+target_link_libraries(test_unit5_heap PRIVATE
+    qroute_unit5
+    qroute_common
+)
+
+target_enable_warnings(test_unit5_heap)
+target_enable_sanitizers(test_unit5_heap)
+
+add_test(NAME unit5_heap
+    COMMAND test_unit5_heap
+    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+)
+
+add_executable(test_pipeline_e2e
+    test_pipeline_e2e.cpp
+)
+
+target_link_libraries(test_pipeline_e2e PRIVATE
+    qroute_pipeline
+    qroute_unit5
+    qroute_unit4
+    qroute_unit3
+    qroute_unit2
+    qroute_unit1
+    qroute_common
+)
+
+target_enable_warnings(test_pipeline_e2e)
+target_enable_sanitizers(test_pipeline_e2e)
+
+add_test(NAME pipeline_e2e
+    COMMAND test_pipeline_e2e
+    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+)

@@ -31,8 +31,12 @@ struct SafeArithmetic {
     }
 
     // FNV-1a 64-bit over a byte buffer; used for determinism_hash.
-    static uint64_t fnv1a64(const void* data, size_t len, uint64_t seed = 1469598103934665603ULL) noexcept;
-    static uint64_t fnv1a64str(const std::string& s, uint64_t seed = 1469598103934665603ULL) noexcept;
+    static constexpr uint64_t kFnv1aOffsetBasis = 1469598103934665603ULL;
+    static uint64_t fnv1a64(const void* data, size_t len, uint64_t seed = kFnv1aOffsetBasis) noexcept;
+    static uint64_t fnv1a64str(const std::string& s, uint64_t seed = kFnv1aOffsetBasis) noexcept;
+    static uint64_t fnv1a_64_str(const std::string& s, uint64_t seed = kFnv1aOffsetBasis) noexcept {
+        return fnv1a64str(s, seed);
+    }
 };
 
 inline bool SafeArithmetic::multiply_u64(uint64_t a, uint64_t b, uint64_t& out) noexcept {
